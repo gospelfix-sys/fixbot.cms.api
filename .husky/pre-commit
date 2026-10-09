@@ -1,0 +1,15 @@
+# .husky/pre-commit (sh 호환)
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 1) 스테이징된 파일에 main/ 변화가 있으면 빌드
+if git diff --cached --name-only | grep -q '^main/'; then
+  echo "🔨 main/ 변경 감지 → build 실행"
+  yarn --cwd main install --frozen-lockfile || exit 1
+  yarn --cwd main build || exit 1
+else
+  echo "ℹ️ main/ 변경 없음 → build 스킵"
+fi
+
+yarn lint-staged || exit 1
+# yarn test || exit 1  # 테스트 인프라 구성 후 활성화

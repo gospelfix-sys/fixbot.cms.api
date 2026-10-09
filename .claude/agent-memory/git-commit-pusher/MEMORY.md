@@ -1,0 +1,1 @@
+- [statkit.cms.api Git 관례](project_git_conventions.md) — yarn 전용, 보호 브랜치(master/dev/prod), 메인 브랜치 main

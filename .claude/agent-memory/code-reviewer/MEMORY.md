@@ -1,0 +1,8 @@
+- [statkit.cms.api scaffold context](project_scaffold_context.md) — 스캐폴드 아키텍처 결정 사항, 알려진 기술 부채, 스택 확정 내역 (초기 커밋 기준 2026-07-18)
+- [Claude agents 설정 이슈](claude_agents_config_issues.md) — git-commit-pusher.md tools 목록에 Bash 없음 (pre-existing, 2026-07-25 기준 미해결)
+- [BLOCKED 후 커밋 범위 축소 패턴](feedback_scope_narrowing.md) — 문제 파일 제외 후 재리뷰 요청 시 판정 방식
+- [formatter.sh 경로 검증 삭제/복원 이력](hooks_formatter_path_validation.md) — CLAUDE_PROJECT_DIR prefix 검증, 2026-07-25 복원 확인 APPROVED, 잔여 Minor(.. 우회 가능성)
+- [settings.json 인라인 훅 후퇴 + portfolio 드리프트](settings_json_inline_hooks_and_portfolio_drift.md) — 2026-08-31 BLOCKED→재검토 APPROVED(조건부), portfolio is_enabled 활성화 시 table_name 수정 필수 확인
+- [서브에이전트 Bash 도구 미제공 환경](env_no_bash_subagent.md) — code-reviewer 세션에 Bash 없을 수 있음, git status/diff 대신 Read/Grep으로 내용 검증 후 조건부 판정
+- [.mcp.json/.serena 설정 파일 리뷰](mcp_serena_config_review.md) — 2026-09-17 최초 커밋 시 민감정보 없음 확인, APPROVED, project_ref는 시크릿 아님, .serena/.gitignore 구조 확인 패턴
+- [mock-auth httpOnly 누락 + 셀프 회원가입 Critical](critical_mock_auth_httponly_and_signup.md) — 2026-09-29 최초 스캐폴드 커밋 BLOCKED, mock-auth 쿠키 httpOnly 누락(완전 인증 우회)/NODE_ENV 미가드/sign-up 페이지 활성화 3대 Critical, 재리뷰 시 체크리스트

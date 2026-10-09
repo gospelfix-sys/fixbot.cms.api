@@ -1,0 +1,59 @@
+{
+  "CSS-in-JS": {
+    "prefix": "sc",
+    "body": [
+      "'use client';",
+      "",
+      "import styled from 'styled-components';",
+      "",
+      "interface ${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Props {}",
+      "",
+      "export const ${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Styled = styled.div<${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Props>``;",
+    ],
+  },
+
+  "React Function Compont": {
+    "prefix": "rfc",
+    "body": [
+      "import { ${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Styled } from './styled';",
+      "",
+      "interface Props {}",
+      "",
+      "const ${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/} = ({}: Props) => {",
+      " $3",
+      " return (",
+      "   <${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Styled className={cx('')}>",
+      "   </${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/}Styled>",
+      " );",
+      "};",
+      "",
+      "export default ${TM_DIRECTORY/(.*\\/)?([^\\/]+)$/${2:/pascalcase}/};",
+    ],
+  },
+
+  "imgPicture": {
+    "prefix": "@imgPicture",
+    "body": [
+      "<div className=\"imgBox\">",
+      "  <picture>",
+      "    <source media=\"(max-width: 768px)\" srcset=\"\">",
+      "    <img src=\"\" alt=\"\" loading=\"lazy\">",
+      "  </picture>",
+      "</div>",
+    ],
+    "description": "기본 picture 태그 (mobile + default)",
+  },
+  "imgPictureFold": {
+    "prefix": "@imgPictureFold",
+    "body": [
+      "<div className=\"imgBox\">",
+      "  <picture>",
+      "    <source media=\"(min-width: ${1:769px}) and (max-width: ${2:802px})\" srcset=\"${3}\">",
+      "    <source media=\"(max-width: ${4:768px})\" srcset=\"${5}\">",
+      "    <img src=\"${6}\" alt=\"${7}\" loading=\"lazy\">",
+      "  </picture>",
+      "</div>",
+    ],
+    "description": "마이크로사이트용 picture 태그 템플릿 (fold + mobile)",
+  },
+}
